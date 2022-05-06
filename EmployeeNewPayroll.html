@@ -3,8 +3,9 @@
     <head>
         <title>Employee PayRoll Form</title>
         <link  rel="stylesheet" href="EmployeeNewPayroll.css">
-        <link>
-        <script> defer src="EmployeePayroll.js" </script>
+        
+        <script defer src="EmployeePayroll.js"></script> 
+        <script defer src="payroll_form.js"></script>
     </head>
     <body>
         <header class="header-content header">
@@ -19,7 +20,7 @@
       </header>
 
       <div class="form-content">
-        <form class="form" action="#" onsubmit="save(event); return false">
+        <form class="form" action="#" onsubmit="save (event); return false">
         <div class="form-head">
             Employee PayRoll Form
         </div>
@@ -27,7 +28,9 @@
             <label class="label text" for="name">Name</label>
             <input class="input" type="text" id="name" name="name" placeholder="Your name.."
             required>
+            <error-output class="text-error" for="text"></error-output>
         </div>
+     
 
         <div class="row-content">
             <label class="label text" for="profile">Profile Image</label>

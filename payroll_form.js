@@ -28,7 +28,8 @@ try {
 const save=()=>{
     alert(salary.tostring())
     try{
-        let employeePayrollData=CreateEmployeePayroll();
+        let employeePayRollData=CreateEmployeePayroll();
+        createAndUpdateStorage(employeePayRollData)
     }catch(e)
     {
         return;
@@ -71,7 +72,18 @@ const save=()=>{
     });
     return selItems;
 }
-
+function createAndUpdateStorage(employeePayrollData)
+{
+    let emplloyeePayrollList=JSON.parse(localStorage.getItem("EmployeePayRollList"));
+    if(emplloyeePayrollList!=undefined)
+    {
+        emplloyeePayrollList.push(employeePayrollData)
+    }else{
+        emplloyeePayrollList=[employeePayrollData]
+    }
+    alert(emplloyeePayrollList.tostring());
+    localStorage.setItem("EmployeePayrollList",JSON.stringify(emplloyeePayrollList))
+}
 
 
 
